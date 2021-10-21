@@ -1,0 +1,68 @@
+﻿html {
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    margin:0;
+    padding: 0;
+    background-color: #111111;
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    align-content:center;
+    align-items:center;
+    justify-content:center;
+}
+h1{
+    font-size: 110px;
+    color: white;
+    font-family:'Lucida Sans';
+}
+label {
+    font-size: 20px;
+    color: #e9e9e9;
+    font-family: 'Lucida Sans';
+}
+.btn {
+    margin-left: 20px;
+    border: 1px solid #ff006e;
+    background: #ff006e;
+    color: white;
+    font-family: 'Lucida Sans';
+    font-size: 50px;
+    padding: 20px 30px;
+    border-radius: 15px;
+    max-height: 100px;
+}
+.loading{
+    position:absolute;
+    bottom: 0;
+    left:0;
+    right:0;
+    width: 100vw;
+    height: 5px;
+    background: #151515;
+}
+.progress {
+    background: #ff006e;
+    width: 0px;
+    height: inherit;
+    transition: 0.1s width;
+}
+.flex{
+    display: flex;
+    align-items:center;
+}
+.flex-column{
+    display:flex;
+    flex-direction:column;
+}
+.inline{
+    justify-content:center;
+}
