@@ -9,12 +9,12 @@ $(document).ready(function () {
                      "Subjects", "Classes", "Professors", "Minimalists", "Republicans", "Democrats", "Views", "Labels", "Items", "T-shirts"]
 
     var startN = 0;
-    var endN = Math.ceil(Math.random() * 347);
+    var endN = Math.ceil(Math.random() * 1000);
     var currentN = 0;
     var startInterval = 0; //default interval for time to change
     var changeInterval = 0.2; //interval for time changing
     var rateOfChange = 0.5; //rate of change for number (determined by difference between startN and endN)
-    var waitTime = Math.pow(currentN/500.0, 2) * 1.1;
+    var waitTime = Math.pow(currentN/endN, 2) * 1.1;
 
     //Stats
     var totalTime = 0;
@@ -29,8 +29,7 @@ $(document).ready(function () {
     var pEnd = window.screen.width;
     var pCurrent = 0;
 
-    console.log("pEnd: " + pEnd);
-    //Start
+    //Start counting
     count(startN);
 
     function count(number) {
@@ -49,13 +48,19 @@ $(document).ready(function () {
             displayResults();
         }
     }
+
+    //Update wait time for counting
     function updateWaitTime() {
-        waitTime = Math.pow(currentN / (endN / 7.0), 2) * (endN / (endN - currentN/2.0)) ;
+        waitTime = Math.pow(currentN / (currentN / 1.25), 2) * (endN / (endN - currentN)) ;
     }
+
+    //Update progress for progress bar
     function updateProgress() {
         progress = (currentN / endN) * pEnd;
         $('.progress').css('width', progress + "px");
     }
+
+    //display reuslts by grab id for tags
     function displayResults() {
         avgTime = totalTime / endN;
         $('#total').text("Total: " + totalTime/1000.0 + " seconds");
